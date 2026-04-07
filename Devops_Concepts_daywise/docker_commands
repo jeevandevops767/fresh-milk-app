@@ -1,0 +1,191 @@
+🚀 DOCKER — ZERO TO HERO (REAL-TIME NOTES)
+🧠 1. WHAT IS DOCKER?
+
+👉 Problem:
+
+“It works on my machine but not in server”
+
+👉 Solution:
+
+Docker packages application + dependencies into a container
+
+🎤 Interview Answer
+
+“Docker is a containerization platform that enables packaging applications and dependencies into lightweight, portable containers ensuring consistency across environments.”
+
+🧱 2. DOCKER ARCHITECTURE
+Client → Docker Daemon → Containers
+Docker CLI → commands
+Docker Daemon → runs containers
+Registry → stores images
+📦 3. IMAGE vs CONTAINER
+Image	Container
+Blueprint	Running instance
+Read-only	Executable
+🎤 Answer
+
+“Image is a template, container is a running instance of that image.”
+
+🧾 4. DOCKERFILE (VERY IMPORTANT)
+
+👉 Used to build image
+
+🔥 Real Dockerfile (Production Level)
+FROM python:3.9-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 5000
+CMD ["python", "app.py"]
+🧠 KEY CONCEPTS
+FROM → base image
+WORKDIR → working directory
+COPY → copy files
+RUN → install dependencies
+CMD → start app
+🎤 Answer
+
+“Dockerfile contains instructions to build Docker images in a layered approach.”
+
+🧱 5. DOCKER LAYERS
+
+👉 Each command = layer
+
+👉 Benefit:
+
+Faster builds
+Caching
+🌐 6. PORT MAPPING
+docker run -p 5000:5000 app
+
+👉 Host → Container
+
+🔐 7. ENVIRONMENT VARIABLES
+🔹 Pass env variables
+docker run -e ENV=prod app
+🔹 In Dockerfile
+ENV ENV=prod
+🎤 Answer
+
+“Environment variables are used to configure applications dynamically without hardcoding values.”
+
+📂 8. VOLUMES (DATA PERSISTENCE)
+docker run -v /host:/container app
+
+👉 Data persists even if container stops
+
+🌐 9. NETWORKING
+Containers communicate via networks
+Default: bridge
+⚙️ 10. IMPORTANT COMMANDS (REAL-TIME)
+🔹 Build
+docker build -t app:v1 .
+🔹 Run
+docker run -d -p 5000:5000 app:v1
+🔹 List
+docker ps
+docker ps -a
+🔹 Logs
+docker logs <id>
+🔹 Exec
+docker exec -it <id> bash
+🔹 Stop
+docker stop <id>
+🔹 Remove
+docker rm <id>
+docker rmi <image>
+🐞 11. DEBUGGING (VERY IMPORTANT)
+🔹 Scenario:
+
+👉 App not working
+
+🔥 Steps:
+docker ps
+docker logs <id>
+docker exec -it <id> bash
+🎤 Answer
+
+“I debug container issues using docker logs, exec into the container, and verify application logs and dependencies.”
+
+🏷️ 12. IMAGE TAGGING (PRODUCTION)
+docker tag app:v1 gcr.io/project/app:v1
+
+👉 Used for:
+
+Versioning
+Rollback
+☁️ 13. PUSH TO REGISTRY
+docker push gcr.io/project/app:v1
+🎤 Answer
+
+“We tag Docker images with version or commit ID and push them to container registries like GCR or ECR.”
+
+🔁 14. DOCKER IN CI/CD (REAL-TIME)
+Pipeline:
+GitHub → Jenkins → Docker build → Push → Deploy
+Jenkins runs:
+docker build
+docker push
+🎤 Answer
+
+“Docker is integrated into CI/CD pipelines to build and deploy containerized applications automatically.”
+
+⚡ 15. BEST PRACTICES
+
+👉 Use:
+
+Small base image (slim/alpine)
+.dockerignore
+Version tagging (not latest)
+Multi-stage builds (advanced)
+🔐 16. SECURITY
+
+👉 Avoid:
+
+Hardcoded secrets
+Root user
+🧠 17. REAL-TIME SCENARIOS
+🔴 Scenario 1:
+
+👉 Container not starting
+
+✔ Check:
+
+logs
+port
+CMD
+🔴 Scenario 2:
+
+👉 App works locally but not in Docker
+
+✔ Check:
+
+dependencies
+environment variables
+🔴 Scenario 3:
+
+👉 High memory usage
+
+✔ Check:
+
+docker stats
+🎤 FINAL INTERVIEW ANSWER (MASTER)
+
+“I use Docker to containerize applications, ensuring consistency across environments. I build optimized images using Dockerfiles, manage containers, debug issues using logs, and integrate Docker into CI/CD pipelines for automated deployments.”
+
+🧠 HOW TO REVISE DAILY
+
+👉 Read this once daily
+👉 Practice commands
+👉 Speak answers
+
+🚀 WHAT YOU SHOULD NOW KNOW
+
+After this:
+
+✅ Docker basics
+✅ Dockerfile
+✅ Commands
+✅ Debugging
+✅ CI/CD usage
