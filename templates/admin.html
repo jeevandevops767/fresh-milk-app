@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Admin Dashboard</h2>
+
+<h3>Orders</h3>
+<ul>
+{% for order in orders %}
+    <li>
+        {{ order.quantity }} liters - {{ order.status }}
+        {% if order.status == "Pending" %}
+        <form method="post" style="display:inline;">
+            <input type="hidden" name="index" value="{{ loop.index0 }}">
+            <button type="submit">Mark Delivered</button>
+        </form>
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
+<a href="/">Logout</a>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Git
+.git/
+
+# Environment variables
+.env
+
+# Docker
+*.tar
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+# Kubernetes secrets (if any)
+*.yaml.secret
+
+# GCP credentials (VERY IMPORTANT)
+*.json
+
+# Node (if later used)
+node_modules/
+
+# IDE
+.vscode/
+.idea/

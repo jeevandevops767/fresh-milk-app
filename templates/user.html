@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>User Dashboard</h2>
+
+<form method="post">
+    <input type="number" name="quantity" placeholder="Enter milk liters" required>
+    <button type="submit">Request Milk</button>
+</form>
+
+<h3>Your Orders</h3>
+<ul>
+{% for order in orders %}
+    <li>{{ order.quantity }} liters - {{ order.status }}</li>
+{% endfor %}
+</ul>
+
+<a href="/">Logout</a>
+
+</body>
+</html>
