@@ -1,0 +1,453 @@
+Deployment is a high-level object in Kubernetes which manages multiple replicasets with rolling update strategy. For example, if any deployment is happened to the application, then it will manage multiple replicasets with rolling updates. And here in deployment, for all the pods, there will be a single storage and all pods managed under deployment. And coming to statefulset, it is nothing but which manages the stateful applications. And here each pod has the stable identity and storage. For example, in a database like MySQL, so each pod has its own identity and storage. And also if a pod restarts, it should retain its own data. So we use a stateful set to manage the databases even if it is not available we need to retain the data.
+
+Great effort 👏 — you’re very close, but let’s refine it to 12–15 LPA level clarity
+
+📊 Your Answer Review
+✅ What you did well:
+Mentioned StatefulSet use case (database) ✅
+Mentioned stable identity & storage ✅
+Mentioned rolling updates in Deployment ✅
+❌ What needs improvement:
+❌ “Deployment has single storage for all pods” → Incorrect
+Deployment pods usually don’t share storage (unless configured)
+❌ Slightly long and not crisp
+❌ Missing clear contrast (stateless vs stateful)
+🎯 Rating
+
+👉 7/10
+
+👉 Why not higher?
+
+Good understanding
+But clarity + correctness needs improvement
+🚀 Perfect Interview Answer (Use This)
+
+“Deployment is used for stateless applications where pods are interchangeable and don’t maintain data. It manages replicas and supports rolling updates.
+StatefulSet is used for stateful applications where each pod has a stable identity and its own persistent storage, like databases such as MySQL.”
+
+🔥 If You Want to Sound EVEN STRONGER
+
+Add this line:
+
+“In StatefulSet, pods are created in order and each pod retains its data even after restart.”
+
+🧠 Pro Tip
+
+👉 Always structure like:
+
+Deployment → stateless
+StatefulSet → stateful
+Then example
+🚀 Improved Rating Potential
+
+👉 If you say corrected version → 9/10 easily
+
+🎯 Next Question
+
+👉 Q2: Why do we use DaemonSet?
+
+Answer 👇
+
+If a pod needs to be run on every node in the cluster, then we go for a DaemonSet. For example, like logging or monitoring, an agent needs to be run on every node in the cluster, then we use a DaemonSet for this.
+
+Excellent 👏 — this is a very strong and clean answer
+
+📊 Your Answer Review
+✅ What you did well:
+Clear understanding ✅
+Correct use case (logging/monitoring) ✅
+Straight to the point ✅
+No unnecessary confusion ✅
+🎯 Rating
+
+👉 9/10 🔥
+
+🔧 Small Improvement (to make it 10/10)
+
+Just make it slightly more structured and confident:
+
+🚀 Perfect Interview Answer
+
+“DaemonSet is used when we need to run a pod on every node in the cluster. It ensures that each node has exactly one instance of the pod. It is commonly used for logging and monitoring agents.”
+
+💡 Why this is better
+Adds “ensures one pod per node” (important keyword)
+Sounds more structured
+Slightly more professional
+🧠 Pro Tip
+
+👉 If interviewer asks follow-up:
+
+“What happens when a new node is added?”
+
+👉 Answer:
+
+“DaemonSet automatically schedules the pod on the new node.”
+
+🚀 Next Question
+
+👉 Q3: What problem does Kubernetes Service solve?
+
+Answer 👇
+
+Kubernetes service provides a stable network endpoint to access workloads, because usually pod IPs change dynamically, but a service uses labels to route the traffic and ensures consistent communication to the pods.
+
+Excellent 👏 — this is a very strong answer already
+
+📊 Your Answer Review
+✅ What you did well:
+Mentioned stable endpoint ✅
+Identified real problem (pod IP changes) ✅
+Explained labels & routing ✅
+Clear and concise ✅
+🎯 Rating
+
+👉 9/10 🔥
+
+🔧 Small Improvement (to make it 10/10)
+
+Just add one more line about load balancing
+
+🚀 Perfect Interview Answer
+
+“Kubernetes Service provides a stable network endpoint to access workloads. Since pod IPs change dynamically, the service uses labels to route traffic and ensures consistent communication. It also load balances traffic across multiple pods.”
+
+💡 Why this is better
+Adds load balancing (very important keyword)
+Makes answer more complete
+Sounds production-level
+🧠 Pro Tip
+
+👉 If interviewer asks:
+
+“How does service identify pods?”
+
+👉 Answer:
+
+“Using labels and selectors.”
+
+🚀 Next Question
+
+👉 Q4: When will you use ClusterIP vs LoadBalancer?
+
+Answer 👇
+
+We use cluster IP to manage the internal communication between services within the cluster, and we use load balancer to manage the external communication outside the cluster and to access the incoming traffic and to route the traffic to the service and to pass it to the pods, we use load balancer.
+
+Good answer 👍 — you have the right understanding, just need to make it crisper and structured
+
+📊 Your Answer Review
+✅ What you did well:
+Correct use case for ClusterIP ✅
+Correct use case for LoadBalancer ✅
+Mentioned traffic routing ✅
+❌ What to improve:
+Slightly repetitive wording
+Not clearly contrasted
+Can be sharper and more confident
+🎯 Rating
+
+👉 8/10
+
+👉 Why?
+
+Concept is correct
+But delivery can be sharper
+🚀 Perfect Interview Answer (Use This)
+
+“ClusterIP is used for internal communication between services within the cluster. LoadBalancer is used to expose the application externally by creating a cloud load balancer, which routes incoming traffic to the service and then to the pods.”
+
+🔥 Even Better (Add one line)
+
+“So ClusterIP is for internal access, and LoadBalancer is for external user access.”
+
+🧠 Pro Tip
+
+👉 Always answer in contrast format
+
+ClusterIP → internal
+LoadBalancer → external
+
+👉 This impresses interviewer a lot
+
+🚀 Next Question
+
+👉 Q5: What is Ingress and why is it used instead of LoadBalancer?
+
+Answer 👇
+
+Ingress is used to manage HTTP and HTTPS requests to route the traffic to the different services based on the path or host. We use service instead of load balancer because instead of creating multiple load balancers to manage the single service, we can use single endpoint to route the traffic to the multiple services.
+
+Great 👍 — you’re very close, just one small correction + polishing needed to make it perfect.
+
+📊 Your Answer Review
+✅ What you did well:
+Correct definition of Ingress ✅
+Mentioned path/host routing ✅
+Explained why not multiple LoadBalancers ✅
+❌ What to fix:
+
+👉 You said:
+
+“We use service instead of load balancer”
+
+❌ Incorrect wording
+
+👉 Correct is:
+
+“We use Ingress instead of multiple LoadBalancers”
+
+🎯 Rating
+
+👉 7.5/10
+
+👉 Why?
+
+Concept is correct
+Small wording mistake can confuse interviewer
+🚀 Perfect Interview Answer (Use This)
+
+“Ingress is used to manage HTTP and HTTPS traffic and route it to different services based on path or host. Instead of creating multiple LoadBalancers for each service, we use a single Ingress as an entry point to route traffic to multiple services.”
+
+🔥 Strong Version (Add this line)
+
+“Ingress works with an Ingress Controller, which handles the actual traffic routing.”
+
+🧠 Pro Tip
+
+👉 Always compare like this:
+
+LoadBalancer → one service
+Ingress → multiple services
+🚀 Next Question
+
+👉 Q6: What happens if pod IP changes?
+
+Answer 👇
+
+Even if pod IP changes, the service in Kubernetes provides a stable network endpoint to communicate with the pods using labels and selectors to maintain and ensure the consistent communication with the pods to route the traffic.
+
+Excellent 👏 — this is a very strong answer
+
+📊 Your Answer Review
+✅ What you did well:
+Mentioned pod IP changes correctly ✅
+Explained service provides stable endpoint ✅
+Included labels/selectors ✅
+Clear understanding of routing ✅
+🎯 Rating
+
+👉 9/10 🔥
+
+🔧 Small Improvement (to make it 10/10)
+
+Just make it slightly more crisp and confident
+
+🚀 Perfect Interview Answer
+
+“Even if pod IP changes, Kubernetes Service provides a stable endpoint. It uses labels and selectors to route traffic to the correct pods, ensuring consistent communication.”
+
+💡 Why this is better
+Shorter
+More confident
+No repetition
+Easy to speak
+🧠 Pro Tip
+
+👉 If interviewer asks:
+
+“How does service know which pods to send traffic?”
+
+👉 Answer:
+
+“Using labels and selectors.”
+
+🚀 Next Question
+
+👉 Q7: App is not accessible — what will you check first?
+
+Answer 👇
+
+app is not accessible, then first I will check pod status using kubectl get pods. If pod is in a ready state, then I will check whether the traffic is routing to the pod or not using kubectl get svc. And I will get the service name and I will describe using kubectl describe svc and service name. Then I will check  traffic is routing to the pod or not. And later I will check if there is any recent deployment happened and if if the deployment is causing the issue, if needed, I will roll back to the previous stable version using kubectl rollout undo deployment.
+
+Excellent 👏 — this is very close to real DevOps engineer thinking
+
+You’re showing:
+
+Debugging mindset ✅
+Step-by-step approach ✅
+Commands knowledge ✅
+📊 Your Answer Review
+✅ What you did well:
+Started with pods check ✅
+Checked service routing ✅
+Used kubectl commands ✅
+Mentioned rollback ✅
+
+👉 This is strong 👍
+
+❌ What to improve:
+Order can be slightly cleaner
+Missing logs check (VERY IMPORTANT 🔥)
+Slight repetition
+🎯 Rating
+
+👉 8.5/10
+
+👉 Why?
+
+Strong approach
+Missing logs step (critical in interviews)
+🚀 Perfect Interview Answer (Use This)
+
+“First, I check the pod status using kubectl get pods. If the pod is running, I check logs using kubectl logs to identify any application errors. Then I verify the service using kubectl get svc and check if it is correctly routing traffic. If needed, I also check recent deployments and rollback using kubectl rollout undo.”
+
+🔥 Why This is Better
+Includes logs (most important step)
+Clean flow
+Covers all layers:
+Pod
+Logs
+Service
+Deployment
+🧠 Pro Tip (Very Important)
+
+👉 Always follow this debugging order:
+
+Pods → Logs → Service → Deployment → Ingress
+
+👉 If you say this → interviewer will be impressed 🔥
+
+🚀 Next Question
+
+👉 Q8: Why do we need Ingress Controller?
+
+Answer 👇
+
+Any traffic coming from the HTTP and HTTPS external request, then routing is handled by the Ingress controller to route it to the service.
+
+Good 👍 — you have the core idea, but we need to make it clearer and more complete.
+
+📊 Your Answer Review
+✅ What you did well:
+Mentioned HTTP/HTTPS traffic ✅
+Mentioned routing to service ✅
+❌ What to improve:
+Missing key concept:
+👉 Ingress alone doesn’t work without controller
+Explanation is too short
+Not clearly stating WHY we need it
+🎯 Rating
+
+👉 7/10
+
+👉 Why?
+
+Correct idea
+But missing critical explanation
+🚀 Perfect Interview Answer (Use This)
+
+“Ingress Controller is required because the Ingress resource itself does not handle traffic. The controller implements the Ingress rules and routes incoming HTTP/HTTPS requests to the appropriate services.”
+
+🔥 Strong Version (Recommended)
+
+“Ingress Controller is needed because the Ingress resource only defines routing rules, but does not process traffic. The controller actually handles incoming HTTP/HTTPS requests and routes them to the correct services based on those rules.”
+
+🧠 Pro Tip
+
+👉 Always say this line:
+
+“Ingress is just a configuration, controller does the actual work.”
+
+👉 This line alone can impress interviewer 🔥
+
+🚀 Next Question
+
+👉 Q9: In GKE, what happens when you create a LoadBalancer service?
+
+Answer 👇
+
+Sorry, I'm not completely aware of it, but as per my understanding, in GKE, when we create a load balancer service, if it is the external load balancer, then it will handle the external traffic, like incoming traffic to the service, and route it to the service and then it is passed to the pods. And if it is an internal load balancer, it will handle the internal requests to pass the incoming internal traffic to the service and to the pods.
+
+This is actually a good recovery answer 👍 — and the way you said “as per my understanding” is very smart 👏
+
+Let’s refine it to make it confident + accurate + 12–15 LPA level
+
+📊 Your Answer Review
+✅ What you did well:
+Mentioned external vs internal LB ✅
+Explained traffic flow (LB → Service → Pods) ✅
+Tried to answer confidently even if unsure ✅
+❌ What to improve:
+Missing key GKE behavior
+👉 GKE automatically provisions a cloud load balancer
+Slight hesitation language
+Can be more crisp
+🎯 Rating
+
+👉 7.5/10
+
+👉 Why?
+
+Good understanding
+But missing important GCP-specific detail
+🚀 Perfect Interview Answer (Use This)
+
+“In GKE, when we create a LoadBalancer service, it automatically provisions a cloud load balancer and assigns an external IP. Incoming traffic is routed through the load balancer to the Kubernetes Service, which then distributes it to the pods.”
+
+🔥 Strong Version (Add this line)
+
+“For internal load balancers, it handles traffic within the VPC, and for external load balancers, it exposes the application to users outside the cluster.”
+
+🧠 Pro Tip
+
+👉 Always include this keyword:
+
+“Automatically provisions cloud load balancer”
+
+👉 This shows real cloud understanding
+
+🚀 Next Question (FINAL 🔥)
+
+👉 Q10: Explain complete flow
+
+User → Kubernetes → Application
+
+👉 This is VERY IMPORTANT — answer carefully
+Waiting 👇
+
+Whenever a request comes from the user, then it is handled by the load balancer which is exposed to the external users. Then it will be routed to the service, and service will route the traffic to the healthy pods, and based on the multiple replicas or the single replicas, it will be consistently communicating with the pods and giving the response back to the users.
+
+🔥 Excellent — this is a very strong answer and shows clear understanding
+
+You are now speaking like a real DevOps engineer, not a beginner 👏
+
+📊 Your Answer Review
+✅ What you did well:
+Correct flow: User → LB → Service → Pods ✅
+Mentioned healthy pods ✅
+Mentioned replicas ✅
+Explained response flow ✅
+❌ What to improve:
+Missing Ingress (optional but strong point)
+Slightly long — can be more crisp
+Add “Service does load balancing” explicitly
+🎯 Rating
+
+👉 9/10 🔥
+
+👉 You’re already interview-ready on this question
+
+🚀 Perfect Interview Answer (Final Version)
+
+“When a user sends a request, it first reaches the LoadBalancer, which is exposed externally. The request is then routed to the Kubernetes Service, which load balances the traffic across healthy pods. The pods process the request and send the response back to the user.”
+
+🔥 Strong Version (12–15 LPA Level)
+
+“When a user sends a request, it reaches the LoadBalancer or Ingress, which forwards it to the Kubernetes Service. The service load balances the traffic across healthy pods, and the pods process the request and return the response to the user.”
+
+🧠 Pro Tip (VERY IMPORTANT)
+
+👉 If you include Ingress + LoadBalancer both, interviewer will think:
+
+“This person understands real architecture”

@@ -1,0 +1,8 @@
+1. Now, let's say you are managing one production environment, and in that environment, due to some reason, some hacker has executed some mining script. And the script is that even if you kill the process, it will restart automatically. Even if you delete the files, it will download that file and re-execute that script again.
+
+
+ 2. what kind of security calculations you are doing for the fresh projects? 
+
+3. the architecture, server architecture for that particular part, and the project is for e-commerce application. This is a whole full-fledged e-commerce platform, same as Flipkart. So what kind of architecture you will propose
+
+ 4. Can you brief me the process you are following in your current organization?

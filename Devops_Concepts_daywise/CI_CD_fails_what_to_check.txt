@@ -1,0 +1,17 @@
+If a CI/CD pipeline fails, I follow a step-by-step approach to identify and fix the issue.
+
+First, I check the pipeline logs in Jenkins to see exactly which stage failed — whether it’s checkout, build, Docker, or deployment.
+
+If the failure is in the checkout stage, I verify Git access, branch name, and credentials.
+
+If it fails in the build stage, I check for code errors, dependency issues, or build tool failures.
+
+If the issue is in the Docker stage, I verify the Dockerfile, image build logs, and ensure the image is tagged and pushed correctly to the registry.
+
+If it fails during the push stage, I check authentication with the registry and permissions of the service account.
+
+If the failure is in the deployment stage, I check Kubernetes using kubectl commands to verify pod status, logs, and events to identify issues like image pull errors or configuration problems.
+
+I also check if there are any IAM or permission issues, especially when accessing cloud resources.
+
+Once I identify the root cause, I fix the issue, rerun the pipeline, and verify that the deployment is successful.”
