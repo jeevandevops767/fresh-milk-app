@@ -66,7 +66,7 @@ pipeline {
 
                     gcloud container clusters get-credentials ${CLUSTER_NAME} --region ${REGION}
 
-                    sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g" deployment.yaml
+                    sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g kubernetes/deployment.yaml 
 
                     kubectl apply -f kubernetes/deployment.yaml
                     kubectl apply -f kubernetes/service.yaml
