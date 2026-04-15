@@ -19,6 +19,18 @@ pipeline {
             }
         }
 
+        stage('Install dependencies') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run pytest'){
+            steps{
+                sh 'python3 -m pytest -v'
+            }
+        }
+
         stage('Get Commit ID') {
             steps {
                 script {
