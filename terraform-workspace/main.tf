@@ -13,17 +13,3 @@ resource "google_storage_bucket" "demo_bucket" {
     location = "US"
 }
 
-resource "google_storage_bucket" "demo_bucket2" {
-    name = "jeeva-demo-bucket-123456"
-    location = "US"
-}
-
-resource "google_storage_bucket" "demo_bucket3" {
-    name = "jeeva-demo-bucket-1234567"
-    location = "US"
-}
-
-resource "google_storage_bucket" "test_bucket" {
-    name = "test-import-bucket-jeevan"
-    location = "US"
-}
