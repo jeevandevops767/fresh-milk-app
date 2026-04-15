@@ -57,19 +57,19 @@ pipeline {
             }
         }
 
-        stage('Deploy to GKE') {
-            steps {
-                withCredentials([file(credentialsId: 'gcp-key', variable: 'GCP_KEY')]) {
-                    sh """
-                    gcloud auth activate-service-account --key-file=$GCP_KEY
-                    gcloud config set project ${PROJECT_ID}
+       stage('Deploy to GKE') {
+    steps {
+        withCredentials([file(credentialsId: 'gcp-key', variable: 'GCP_KEY')]) {
+            sh """
+            gcloud auth activate-service-account --key-file=$GCP_KEY
+            gcloud config set project ${PROJECT_ID}
 
-                    gcloud container clusters get-credentials ${CLUSTER_NAME} --region ${REGION}
+            gcloud container clusters get-credentials ${CLUSTER_NAME} --region ${REGION}
 
-                    sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g kubernetes/deployment.yaml"
+            sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g" kubernetes/deployment.yaml
 
-                    kubectl apply -f kubernetes/deployment.yaml
-                    kubectl apply -f kubernetes/service.yaml
+            kubectl apply -f kubernetes/deployment.yaml
+            kubectl apply -f kubernetes/service.yaml
                     """
                 }
             }
