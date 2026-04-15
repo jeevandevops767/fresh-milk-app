@@ -26,6 +26,7 @@ env/
 .terraform/
 terraform.tfstate
 terraform.tfstate.backup
+*.tfvars
 
 # Kubernetes secrets (if any)
 *.yaml.secret
