@@ -62,6 +62,8 @@ pipeline {
                 withCredentials([file(credentialsId: 'gcp-key', variable: 'GCP_KEY')]) {
                     sh """
                     gcloud auth activate-service-account --key-file=$GCP_KEY
+                    gcloud config set project ${PROJECT_ID}
+
                     gcloud container clusters get-credentials ${CLUSTER_NAME} --zone ${ZONE}
 
                     sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g" deployment.yaml
