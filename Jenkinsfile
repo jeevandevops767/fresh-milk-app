@@ -68,8 +68,8 @@ pipeline {
 
                     sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g" deployment.yaml
 
-                    kubectl apply -f deployment.yaml
-                    kubectl apply -f service.yaml
+                    kubectl apply -f kubernetes/deployment.yaml
+                    kubectl apply -f kubernetes/service.yaml
                     """
                 }
             }
