@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+      
+      Environments{
+        project_id = " "
+        region = " "
+        environment =" "
+
+      }
+      stages{
+        stage('checkout  scm'){
+            steps{
+                git branch: 'main'
+                url: " "
+            }
+        }
+        stage('install dependencies'){
+            steps{
+                sh 'pip install -r requirements.txt'
+            }
+
+        }
+        stage('run pytest'){
+            steps{
+                sh '  python3 -m pytest -v'
+
+            }
+        }
+        stage('build docker image'){
+            steps{
+                sh ''' docker build -t ${image_name}:${Build_number} .'''
+            }
+        }
+        stage('tag docker image'){
+            steps{
+                sh ''' docker tag ${image_name}:${Build_number}\
+                ${region-docker.pkg.dev}/${project_id}/${repo}/${image_name}:${Build_number}
+            }
+        }
+        stage('push image to gar'){
+            steps{
+                sh ''' ${region-docker.pkg.dev}/${project_id}/${my_repo}/${image_name}:${Build_number} '''
+            }
+        }
+        stage ('deploy image to gke'){
+            steps{
+                sh ''' kubernetes apply -f deployment.yaml '''
+            }
+        }
+      }
+}
