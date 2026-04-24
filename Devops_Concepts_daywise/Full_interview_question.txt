@@ -1,0 +1,148 @@
+🚀 🔥 CI/CD & JENKINS
+Core
+Explain your CI/CD pipeline end-to-end (3 steps)
+How Jenkins pipeline is triggered?
+What are stages in Jenkins?
+What is a Jenkinsfile?
+What is webhook?
+Practical
+How Jenkins connects to GCP?
+How do you manage credentials in Jenkins?
+How do you debug Jenkins pipeline failure?
+What happens if Docker build fails?
+What if pipeline succeeds but changes not reflecting?
+Advanced
+How do you ensure zero downtime deployment via pipeline?
+How do you handle rollback in Jenkins pipeline?
+How do you pass environment variables in pipeline?
+🚀 🔥 KUBERNETES (GKE)
+Core
+What is Kubernetes?
+What is a Pod?
+What is Deployment?
+What is StatefulSet?
+Difference between Deployment and StatefulSet?
+What is DaemonSet?
+What is Service?
+Networking
+Types of Services in Kubernetes?
+What is LoadBalancer?
+What is Ingress?
+How traffic flows from user to pod?
+Deployment
+How do you deploy app to Kubernetes from Jenkins?
+What happens internally in kubectl apply?
+Difference between kubectl apply and set image?
+Scenarios (VERY IMPORTANT)
+App deployed but not accessible
+Pod CrashLoopBackOff
+CPU high in pod
+Service not routing traffic
+Changes not reflecting after deployment
+Zero Downtime
+What is rolling update?
+What is maxUnavailable?
+What is maxSurge?
+Readiness vs Liveness probe?
+🚀 🔥 DOCKER
+Core
+What is Docker?
+What is image vs container?
+What is Dockerfile?
+Commands
+How to build image?
+How to run container?
+How to check logs?
+Scenarios
+Docker build fails
+Container running but app not accessible
+What is port mapping?
+Common Docker issues?
+🚀 🔥 TERRAFORM
+Core
+What is Terraform?
+What is state file?
+Why state file is important?
+What is remote backend?
+Advanced
+What is state locking?
+What happens if 2 users run apply?
+What is terraform import?
+Resource vs data source?
+What are provisioners?
+Practical
+count vs for_each?
+What happens if state file is deleted?
+How to manage manually created resource?
+🚀 🔥 GCP & GKE
+Core
+What is GCP?
+What is GKE?
+Difference between GKE and Kubernetes?
+Practical
+How do you authenticate to GCP?
+What is service account?
+How Jenkins connects to GCP?
+What is Artifact Registry?
+Load Balancer
+Internal vs External Load Balancer?
+How GKE provisions load balancer?
+🚀 🔥 VPC NETWORKING
+Core
+What is VPC?
+What is subnet?
+What is IP range?
+Advanced
+What are firewall rules?
+How GKE connects to VPC?
+How traffic flows inside VPC?
+Role of VPC in GKE?
+🚀 🔥 GIT & GITHUB
+Core
+What is Git?
+What is GitHub?
+Difference between Git and GitHub?
+Commands
+git clone vs pull
+git commit vs push
+What is branching?
+Practical
+What is pull request?
+Merge conflict — how to resolve?
+Code pushed but pipeline not triggered?
+🚀 🔥 LINUX
+Core
+What is Linux?
+Basic commands you use daily?
+Commands
+df -h vs du -sh
+How to check running processes?
+How to check logs?
+Scenarios
+Disk full issue
+High CPU usage
+Application not running
+🎯 🔥 MOST IMPORTANT (REVISE THESE FIRST)
+
+👉 Top 20 high probability:
+
+CI/CD pipeline explanation
+Jenkins webhook
+Docker image tagging
+Kubernetes deployment flow
+kubectl apply
+Zero downtime
+CrashLoopBackOff
+App not accessible
+Terraform state
+State locking
+count vs for_each
+Jenkins → GCP auth
+LoadBalancer flow
+VPC basics
+Git webhook issue
+Docker port issue
+Linux disk full
+CPU high
+Rollback
+Debugging approach
