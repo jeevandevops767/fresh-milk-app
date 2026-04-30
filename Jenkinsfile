@@ -6,7 +6,7 @@ pipeline {
         REGION = "us-central1"
         REPO = "my-repo"
         IMAGE_NAME = "fresh-milk-app"
-        CLUSTER_NAME = "jeeva-cluster"
+        CLUSTER_NAME = "gke-cluster"
         ZONE = "us-central1-a"
     }
 

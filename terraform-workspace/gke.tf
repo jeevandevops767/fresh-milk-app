@@ -1,11 +1,23 @@
-resource "google_container_cluster" "gke_cluster" {
-  name     = "jeeva-cluster"
-  location = "us-central1"
-  deletion_protection = false
+resource "google_container_cluster" "gke" {
+    name             = var.cluster_name
+    location         = var.region 
 
-  initial_node_count = 1
+    remove_default_node_pool = true
+    initial_node_count = 1
 
-  node_config {
-    machine_type = "e2-medium"
+    network    = google_compute_network.vpc.id
+    subnetwork = google_compute_subnetwork.subnet.id
+
+    ip_allocation_policy {
+        cluster_secondary_range_name = "pods-range"
+        services_secondary_range_name = "service-range"
+    }
+    private_cluster_config {
+    enable_private_nodes    = true
+    enable_private_endpoint = false
+  }
+
+  workload_identity_config {
+    workload_pool = "${var.project_id}.svc.id.goog"
   }
 }
