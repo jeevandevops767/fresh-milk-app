@@ -13,12 +13,12 @@ spec:
 
   selector:
     matchLabels:
-      app: milk-app
+      app: fresh-milk
 
   template:
     metadata:
       labels:
-        app: milk-app
+        app: fresh-milk
 
     spec:
       containers:
