@@ -2,8 +2,11 @@ from flask import Flask, request, jsonify, session
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret123'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///milk.db'
+
+
+import os
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default-secret')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URL', 'sqlite:///milk.db')
 
 db = SQLAlchemy(app)
 
