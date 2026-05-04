@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fresh-milk-app
 spec:
-  replicas: 2
+  replicas: 1   # ✅ reduce for 1 node
 
   strategy:
     type: RollingUpdate
@@ -13,12 +13,12 @@ spec:
 
   selector:
     matchLabels:
-      app: fresh-milk
+      app: fresh-milk-app
 
   template:
     metadata:
       labels:
-        app: fresh-milk
+        app: fresh-milk-app
 
     spec:
       containers:
@@ -27,34 +27,18 @@ spec:
           ports:
             - containerPort: 5000
 
+          # ✅ SIMPLE ENV (no MySQL for now)
           env:
             - name: DB_URL
               value: "sqlite:///milk.db"
+            - name: SECRET_KEY
+              value: "test123"
 
-          envFrom:
-            - configMapRef:
-                name: milk-config
-            - secretRef:
-                name: milk-secret
-
+          # ✅ LOW RESOURCE (IMPORTANT)
           resources:
             requests:
-              cpu: "200m"
-              memory: "256Mi"
+              cpu: "50m"
+              memory: "64Mi"
             limits:
-              cpu: "500m"
-              memory: "512Mi"
-
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 5000
-            initialDelaySeconds: 5
-            periodSeconds: 10
-
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 5000
-            initialDelaySeconds: 15
-            periodSeconds: 20
+              cpu: "200m"
+              memory: "128Mi"

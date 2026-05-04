@@ -80,7 +80,7 @@ pipeline {
                     gcloud auth activate-service-account --key-file=$GCP_KEY
                     gcloud config set project ${PROJECT_ID}
 
-                      gcloud container clusters get-credentials ${CLUSTER_NAME} --zone ${ZONE}
+                    gcloud container clusters get-credentials ${CLUSTER_NAME} --region ${REGION}
                     cp kubernetes/deployment.yaml deployment-temp.yaml
 
                     sed -i "s|IMAGE_PLACEHOLDER|${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${IMAGE_NAME}:${COMMIT_ID}|g" deployment-temp.yaml

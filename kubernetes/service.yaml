@@ -5,7 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: fresh-milk
+    app: fresh-milk-app   # ✅ must match deployment label
   ports:
-  - port: 80
-    targetPort: 5000
+    - port: 80
+      targetPort: 5000
