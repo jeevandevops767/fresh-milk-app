@@ -7,7 +7,6 @@ pipeline {
         REPO = "my-repo"
         IMAGE_NAME = "fresh-milk-app"
         CLUSTER_NAME = "gke-cluster"
-        ZONE = "us-central1-a"
     }
 
     stages {
