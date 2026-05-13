@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-raise Exception("Intentional crash for testing")
 
 
 import os
