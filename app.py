@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+raise Exception("Intentional crash for testing")
+
 
 import os
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default-secret')
