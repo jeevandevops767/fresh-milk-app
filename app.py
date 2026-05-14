@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, session
 from flask_sqlalchemy import SQLAlchemy
+import pandas
 
 app = Flask(__name__)
 
