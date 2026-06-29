@@ -1,0 +1,20 @@
+🚀 KUBERNETES SERVICES (Master this)
+🔹 1. What is it?
+
+A Service in Kubernetes provides a stable network endpoint to access a group of pods.
+
+🔹 2. Why we use it?
+
+Because pods are dynamic — their IPs change when they restart, so we need a stable way to access them.
+
+🔹 3. Where it is used?
+Communication between services (backend ↔ database)
+Exposing applications to users
+Load balancing traffic across pods
+🔹 4. How it works?
+
+Service uses labels to identify pods and forwards traffic to them, providing a stable IP and DNS name.
+
+🎤 Interview Answer (Base)
+
+“Kubernetes Service provides a stable way to access pods. Since pod IPs change dynamically, services use labels to route traffic and ensure consistent communication.”

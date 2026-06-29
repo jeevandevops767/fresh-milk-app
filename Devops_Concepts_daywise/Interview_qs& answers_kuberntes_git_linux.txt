@@ -1,0 +1,615 @@
+normally for banking project for one application or team how much budget we can set in real time for setting the budget alerts
+
+Great — this is a real FinOps + DevOps question 🔥
+I’ll give you a practical + interview-ready answer (not theoretical).
+
+🎯 Short Interview Answer
+
+“Budget depends on application size, but typically for a single banking application or team, we set initial budgets between ₹5,000 to ₹50,000 per month and configure alerts at 50%, 75%, and 90% thresholds.”
+
+🧠 Real-Time Explanation (Simple)
+
+👉 Budget is NOT fixed — it depends on:
+
+Number of VMs / GKE nodes
+Traffic
+Environment (dev / prod)
+🏦 Real Banking Project Example
+🟢 Small App / Dev Environment
+₹5,000 – ₹10,000 / month
+🟡 Medium App
+₹15,000 – ₹30,000 / month
+🔴 Production Banking App
+₹30,000 – ₹50,000+ / month
+🔔 How We Set Alerts (IMPORTANT)
+
+👉 Always set alerts like:
+
+50% → Warning
+75% → Attention
+90% → Critical
+🎤 Strong Interview Line
+
+“We don’t set random budgets, we analyze previous usage and set budget with alert thresholds to control cost.”
+
+⚠️ Important Point (Say This if Needed)
+
+“Budget is dynamic and depends on workload, but alerts help us prevent overspending.”
+
+🚀 Real DevOps Practice
+
+In companies:
+
+Each team/project → separate budget
+Labels used → team-wise cost
+Alerts sent to:
+DevOps team
+Project owners
+💪 Final Tip
+
+👉 Don’t say exact fixed number
+👉 Say range + logic
+
+If you want next:
+
+👉 I can give real cost optimization interview questions 🔥
+
+it is uk project so give cost in the same currency usd 
+
+Perfect — for UK / international projects, use USD (or GBP sometimes).
+Here’s your interview-ready answer in USD 🔥
+
+🎯 Short Interview Answer
+
+“For a single application or team, we typically set budgets between $100 to $600 per month depending on workload. We also configure alerts at 50%, 75%, and 90% to control spending.”
+
+🧠 Real-Time Breakdown
+🟢 Small / Dev Environment
+$100 – $150 / month
+🟡 Medium Application
+$200 – $400 / month
+🔴 Production Banking App
+$400 – $600+ / month
+🔔 Alert Setup (IMPORTANT)
+50% → Warning
+75% → Attention
+90% → Critical
+🎤 Strong Interview Line
+
+“We estimate budget based on resource usage like GKE nodes and VMs, and set alerts to avoid unexpected cost spikes.”
+
+⚠️ Important Tip
+
+👉 Don’t say exact fixed number
+👉 Always say range + depends on workload
+
+💪 Final Answer (Best Version)
+
+“Budget depends on application size, but typically we set around $100 to $600 per month per team and configure alerts to monitor and control cost.”
+
+If you want next:
+
+👉 I can give real cost optimization techniques (interview questions) 🔥
+
+“Start rapid TCS mock
+
+Perfect — let’s do rapid-fire TCS mock 🔥
+Answer in 2–3 lines max. I’ll rate quickly.
+
+🎤 RAPID MOCK START
+❓ Question 1:
+
+What happens internally when you run kubectl apply -f deployment.yaml?
+
+👉 Your answer (short)
+
+And based on the QCTL deployment.yaml, then QCTL will talk with the Kubernetes API using GKE, so it will go for GKE API and checks for the actual state of the desired state. Based on the actual and desired state, whatever the configuration we have written in the deployment.yaml file, it will be updating the configuration. So if we have given replica plus as three, then pods will be created or green pods will be created and containers will be created or bigram will be created, liveness probe, readiness probe, everything, whatever the configuration we have given in the deployment.yaml, then it will be created based on our configuration.
+
+Good understanding 👍 but too long for rapid round.
+
+🎯 Rating: 7 / 10
+❌ What to Improve
+Too lengthy
+Not crisp
+Missing simple flow
+✅ Perfect Answer (Say this)
+
+“kubectl apply sends the deployment file to Kubernetes API server, which compares desired and current state.
+It then creates or updates resources like pods and ensures the desired state is maintained.”
+
+🔥 Why This Works
+Short ✔️
+Clear ✔️
+Covers key concept ✔️
+🎤 Next Question (FAST)
+❓ Question 2:
+
+What is difference between Docker image and container?
+
+👉 Your answer (2 lines max) 🔥
+
+So Docker image is a read-only executable package which is created from a Docker file where container is a running instance and it is created from the Docker image and it can be used anywhere across the multiple environments.
+
+Good — this is a strong answer 👍
+
+🎯 Rating: 8.5 / 10
+✅ What You Did Well
+✔️ Correct definition
+✔️ Mentioned image → container relation
+✔️ Clear understanding
+❌ Small Improvement
+Slightly long
+Last line (“used anywhere…”) not needed
+✅ Perfect Answer (Crisp)
+
+“Docker image is a read-only package that contains application and dependencies.
+Container is a running instance of that image.”
+
+🔥 Next Question (Important)
+❓ Question 3:
+
+What is difference between CI and CD?
+
+👉 Answer in 2 lines max 🚀
+
+CI is Continuous Integration, where testing is done continuously, and  CD is Continuous Delivery or Continuous Deployment, in our project in lower environments, we follow continuous integration and continuous deployment. In production environment, we follow continuous integration and continuous delivery. For continuous delivery, it will be stopped at one stage and asked for approval. Once it is approved, then only image will be deployed into the GKE.
+
+Good answer — but too long for rapid round 👍
+
+🎯 Rating: 7.5 / 10
+✅ What You Did Well
+✔️ Correct understanding of CI and CD
+✔️ Mentioned real project usage (very good 🔥)
+❌ What to Improve
+Too lengthy
+Mixed explanation
+Didn’t clearly define difference first
+✅ Perfect Answer (Crisp)
+
+“CI is Continuous Integration where code is built and tested automatically.
+CD is Continuous Delivery/Deployment where the application is deployed automatically or with approval.”
+
+🔥 Pro Tip
+
+👉 First give definition, then if asked → explain project
+
+🎤 Next Question (VERY IMPORTANT)
+❓ Question 4:
+
+What is use of readiness probe?
+
+👉 Answer in 2 lines max 🚀
+
+Readiness probe ensure that traffic will be routed to the pod which is ready. if pod is not ready then traffic will not be routed to it.
+
+Excellent — this is a perfect answer 👍🔥
+
+🎯 Rating: 9 / 10
+✅ What You Did Well
+✔️ Clear and correct
+✔️ Explained traffic behavior
+✔️ Very concise
+🔥 Slight Upgrade (Optional)
+
+“Readiness probe checks if a pod is ready to receive traffic. If not ready, Kubernetes will not send traffic to that pod.”
+
+👉 Your version is already interview-ready 💪
+
+🎤 Next Question (TRICKY)
+❓ Question 5:
+
+What is difference between Horizontal Pod Autoscaler (HPA) and Cluster Autoscaler?
+
+👉 Answer in 2 lines max 🚀
+
+Horizontal auto-scaler is nothing but auto-scaling the pods based on the load. And coming to the cluster auto-scaler, it will scale the clusters based on the capacity of the clusters. So both willhave autoscale behavior, but HPA gives auto-scaling for a pod and Cluster auto scaler will give auto-scaling for clusters
+
+Good — concept is correct 👍 just needs to be crisper.
+
+🎯 Rating: 8 / 10
+✅ What You Did Well
+✔️ Correct difference (pods vs cluster)
+✔️ Mentioned scaling based on load
+❌ Improve
+Slightly repetitive
+“capacity of clusters” → say “nodes” (more accurate)
+✅ Perfect Answer (Crisp)
+
+“HPA scales the number of pods based on metrics like CPU or memory.
+Cluster Autoscaler scales the number of nodes in the cluster based on resource demand.”
+
+🔥 Key Upgrade
+
+👉 Use word nodes instead of cluster capacity → sounds more professional
+
+🎤 Next Question (FINAL — VERY IMPORTANT)
+❓ Question 6:
+
+What will you do if your application is running but users are unable to access it?
+
+👉 Answer in 2–3 lines max 🚀
+(This is selection-level question 🔥)
+
+if our application is running but users are unable to access, then I will check whether traffic is serving or not using kubectl get svc and kubectl describe svc and also I will check for if there is any recent deployment happened and verify if the deployment is stable or not. If needed, then I will roll back to the previous stable version of the deployment.
+
+Good — strong troubleshooting thinking 👍
+
+🎯 Rating: 8.5 / 10
+✅ What You Did Well
+✔️ Checked service (important 🔥)
+✔️ Mentioned deployment verification
+✔️ Included rollback
+❌ Small Improvement
+Missing pod check (first step ideally)
+Slightly wordy
+✅ Perfect Answer (Crisp)
+
+“First I check pod status and logs, then verify service and endpoints using kubectl.
+If there is any recent deployment issue, I troubleshoot or rollback to the previous stable version.”
+
+🏁 FINAL RAPID MOCK RESULT
+⭐ Overall Rating: 8.3 / 10
+🎯 TCS Selection Chances
+
+👉 70–80% chance you can clear
+
+💪 Final Advice (Before Interview)
+Keep answers short (2–3 lines)
+
+Start with:
+
+“In my project…”
+
+Stay calm
+Don’t over-explain
+🔥 Final Confidence Line
+
+“I will answer clearly and confidently.”
+
+If you want after interview:
+
+👉 Say “TCS interview feedback”
+I’ll analyze and upgrade you to 9+/10 level 🚀
+
+Can we move to linux and git now ?
+
+Perfect — this is the right move 🔥
+Linux + Git = high probability questions in TCS
+
+🚀 We’ll do RAPID MOCK (same style)
+
+👉 2–3 line answers only
+👉 I’ll rate you strictly
+
+🎤 LINUX ROUND START
+❓ Question 1:
+
+How do you check disk usage in Linux?
+
+👉 Answer in 2 lines max 🚀
+
+For checking disk usage, I will use df -h command. If we want to check which service is using high usage, then I will go with du -sh * command. So it will list which service is using high disk usage.
+
+Good — nice practical answer 👍
+
+🎯 Rating: 8 / 10
+✅ What You Did Well
+✔️ Correct commands (df -h, du -sh)
+✔️ Practical usage explained
+❌ Small Improvement
+Say directory/file, not “service”
+Slightly cleaner wording needed
+✅ Perfect Answer (Crisp)
+
+“I use df -h to check overall disk usage.
+To check which directory is using more space, I use du -sh *.”
+
+🎤 Next Question (LINUX)
+❓ Question 2:
+
+How do you check running processes and kill a process?
+
+👉 Answer in 2 lines max 🚀
+
+I will check running processes using ps -ef command and to kill a specific process will use kill 9 pid_id for getting pid is will use ps -ef  | grep nginx
+
+Good — solid practical answer 👍
+
+🎯 Rating: 8.5 / 10
+✅ What You Did Well
+✔️ Correct commands (ps -ef, grep, kill -9)
+✔️ Clear flow (find → kill)
+❌ Small Improvement
+Say PID clearly
+Don’t always default to -9 (too forceful)
+✅ Perfect Answer (Crisp)
+
+“I use ps -ef | grep <process> to find the PID.
+Then I use kill <PID> or kill -9 <PID> to stop the process.”
+
+🎤 Next Question (LINUX — VERY COMMON)
+❓ Question 3:
+
+Difference between top and ps -ef?
+
+👉 Answer in 2 lines max 🚀
+
+Top will show the live logs of the process, but but ps -ef we can list for the specific process using grep command.
+
+Good try 👍 but needs correction.
+
+🎯 Rating: 6.5 / 10
+❌ What Went Wrong
+“live logs” ❌ → incorrect
+Didn’t clearly explain difference
+✅ Correct Concept
+top → real-time process monitoring
+ps -ef → snapshot of processes at that moment
+✅ Perfect Answer (Crisp)
+
+“top shows real-time running processes and resource usage.
+ps -ef shows a snapshot of all running processes at a particular time.”
+
+🎤 Next Question (GIT — IMPORTANT)
+❓ Question 4:
+
+What is difference between git pull and git fetch?
+
+👉 Answer in 2 lines max 🚀
+
+Git pull is used to pull the latest code from the remote repository to local and git fetch will fetch the local code with up to date in local machine
+
+Good attempt 👍 but second line is incorrect.
+
+🎯 Rating: 6.5 / 10
+❌ What Went Wrong
+“git fetch will fetch local code” ❌ (wrong meaning)
+Missing key difference
+✅ Correct Concept
+git fetch → downloads changes but does NOT merge
+git pull → fetch + merge into your branch
+✅ Perfect Answer (Crisp)
+
+“git fetch downloads latest changes from remote but does not merge them.
+git pull fetches and automatically merges changes into the local branch.”
+
+🎤 Next Question (GIT — VERY IMPORTANT)
+❓ Question 5:
+
+What is branching in Git and why do we use it?
+
+👉 Answer in 2 lines max 🚀
+
+Branching is the strategy to maintain the master code clean and to not corrupt it. So, using branching strategy, we can create feature branches to do not directly committing the changes into the master.
+
+Good — solid understanding 👍
+
+🎯 Rating: 8 / 10
+✅ What You Did Well
+✔️ Mentioned protecting main/master branch
+✔️ Explained feature branches usage
+❌ Small Improvement
+Slightly wordy
+Add definition first
+✅ Perfect Answer (Crisp)
+
+“Branching in Git allows us to create separate versions of code for development.
+It helps us work on features without affecting the main branch.”
+
+🏁 FINAL LINUX + GIT MOCK RESULT
+⭐ Overall Rating: 7.8 / 10
+🎯 Final Interview Readiness
+
+👉 You are:
+
+✅ Strong in DevOps concepts
+✅ Good in Kubernetes
+⚠️ Slight gaps in Linux/Git clarity
+🚀 Final 10-Min Revision (Do This Now)
+df -h, du -sh
+ps -ef, top difference
+git fetch vs pull
+branching
+💪 Final Confidence
+
+👉 You are ready
+👉 Just keep answers short
+
+If you want after interview:
+
+👉 Say “TCS interview feedback”
+I’ll push you to 9+/10 level 🚀
+
+So i have a question like if we are creating feature branch from master and without merging feature branch to master can we move those changes to gcp service where our app is deployed ? without merging feature branch changes to master 
+
+Great question — this is real-world DevOps thinking 🔥
+
+🎯 Short Answer (Interview Ready)
+
+“Yes, we can deploy code from a feature branch without merging to master. We just configure the CI/CD pipeline to build and deploy from that branch.”
+
+🧠 Simple Explanation
+
+👉 Branch ≠ deployment restriction
+
+You can:
+
+Deploy feature branch → dev environment
+Deploy main/master → production
+🚀 How It Works in Real Projects
+🟢 Example
+Feature branch: feature/login
+Jenkins pipeline triggers on that branch
+Builds Docker image
+Deploys to:
+Dev / Test GKE
+⚠️ Important Practice
+
+👉 Companies usually:
+
+❌ Don’t deploy feature branch to production
+✅ Use it for:
+Testing
+QA
+🎤 Strong Interview Line
+
+“Feature branches are usually deployed to lower environments like dev or QA for testing, and only after validation they are merged to main for production deployment.”
+
+💡 Real Pipeline Logic
+feature/* → Dev
+develop → QA
+main/master → Prod
+🔥 Final Takeaway
+
+👉 Yes, possible
+👉 Controlled via CI/CD
+👉 Not used for production directly
+
+If you want next:
+
+👉 I can give real Jenkins pipeline branching strategy (asked in interviews) 🔥
+
+still i need few more questions in git and github for mock interview
+
+Perfect — Git/GitHub is high probability in TCS/Capgemini 🔥
+Let’s continue rapid mock (strict 2 lines answers).
+
+🎤 GIT / GITHUB MOCK — ROUND 2
+❓ Question 1:
+
+What is the difference between git clone and git pull?
+
+👉 Answer in 2 lines max 🚀
+
+for the first time if code is not available in our local machine, then we use Git clone to clone the remote repository code to our local machine. Whereas Git pull uses to pull the latest code from the remote repository to our local brach.
+
+Good — this is a strong answer 👍
+
+🎯 Rating: 8.5 / 10
+✅ What You Did Well
+✔️ Clear difference
+✔️ Correct usage (first time vs update)
+✔️ Easy to understand
+❌ Small Improvement
+Slight wording polish
+✅ Perfect Answer (Crisp)
+
+“git clone is used to copy the repository for the first time to local.
+git pull is used to fetch and update the latest changes from remote to local.”
+
+🎤 Next Question (IMPORTANT)
+❓ Question 2:
+
+What is git stash and when do you use it?
+
+👉 Answer in 2 lines max 🚀
+
+Git stash is used when we make few changes in our local machine branch, and if we do not want to commit those changes to the remote repository, then we can stash those commits instead of pushing it into remote.
+
+Good — concept is mostly right 👍 but small correction needed.
+
+🎯 Rating: 7.5 / 10
+❌ What to Fix
+Stash is for uncommitted changes, not commits
+Wording slightly confusing
+✅ Perfect Answer (Crisp)
+
+“git stash is used to temporarily save uncommitted changes without committing them.
+It helps when we want to switch branches without losing current work.”
+
+🔥 Key Point
+
+👉 “uncommitted changes” = important keyword
+
+🎤 Next Question (VERY IMPORTANT)
+❓ Question 3:
+
+What is pull request in GitHub?
+
+👉 Answer in 2 lines max 🚀
+
+In Git, the process in GitHub is raise a pull request, review the pull from repo owners or code owners, get approval before merging it to the main or master.
+
+Good — understanding is correct 👍 just needs clarity.
+
+🎯 Rating: 8 / 10
+✅ What You Did Well
+✔️ Mentioned review and approval
+✔️ Connected to merge process
+❌ Improve
+Start with definition
+Slightly cleaner wording
+✅ Perfect Answer (Crisp)
+
+“A pull request is used to request merging code from one branch to another.
+It allows code review and approval before merging into main branch.”
+
+🎤 Next Question (VERY IMPORTANT)
+❓ Question 4:
+
+What is merge conflict and how do you resolve it?
+
+👉 Answer in 2 lines max 🚀
+
+If two team members are simultaneously making changes into the same code and one person has committed the changes and merged it with the master and if those changes are not available in my feature branch, then when I have raised a pull request, then I will get a merge conflict because of those changes are not available in my branch and we can resolve it by removing the unwanted changes manually and commiting it with my branch
+
+Good — you understand the scenario 👍 but needs to be shorter + clearer.
+
+🎯 Rating: 7.5 / 10
+✅ What You Did Well
+✔️ Correct concept (same file changes)
+✔️ Mentioned manual resolution
+❌ Improve
+Too long
+Wording slightly confusing
+Focus on definition + fix
+✅ Perfect Answer (Crisp)
+
+“Merge conflict occurs when two branches have conflicting changes in the same file.
+We resolve it by manually fixing the code and committing the changes.”
+
+🎤 Next Question (FINAL — VERY IMPORTANT)
+❓ Question 5:
+
+What is .gitignore and why do we use it?
+
+👉 Answer in 2 lines max 🚀
+
+.gitignore is used to ignore a few files to be committed into the GitHub. So we can mention those file names or else with keywords in the .gitignore file so that those files will not get committed or pushed to the GitHub.
+
+Excellent — this is a very strong answer 👍🔥
+
+🎯 Rating: 9 / 10
+✅ What You Did Well
+✔️ Clear purpose (ignore files)
+✔️ Mentioned commit/push behavior
+✔️ Easy to understand
+🔥 Slight Upgrade (Optional)
+
+“.gitignore is used to exclude specific files or folders from being tracked by Git.
+It prevents unnecessary or sensitive files from being committed.”
+
+🏁 FINAL GIT MOCK RESULT
+⭐ Overall Rating: 8.2 / 10
+🎯 Final Feedback
+
+👉 You are:
+
+✅ Strong in concepts
+⚠️ Slightly wordy sometimes
+✅ Improving very fast
+🚀 Final Advice for Interview
+Keep answers 2 lines
+Use keywords:
+“uncommitted changes”
+“merge conflict”
+“code review”
+💪 Final Status
+
+👉 You are interview ready
+👉 You can crack TCS / Capgemini
+
+If you want after interview:
+
+👉 Say “Final improvement plan”
+I’ll push you to 9.5/10 level 🚀

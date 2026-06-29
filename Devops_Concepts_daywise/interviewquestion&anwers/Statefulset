@@ -1,0 +1,20 @@
+Let’s Lock Your Example (StatefulSet — PERFECT VERSION)
+🔹 What is it?
+
+StatefulSet manages stateful applications with stable identity and storage.
+
+🔹 Why we use it?
+
+Because some applications need fixed identity and persistent data even after restart.
+
+🔹 Where it is used?
+
+Databases like MySQL, MongoDB, Kafka.
+
+🔹 How it works?
+
+Each pod gets a unique name (db-0, db-1) and its own persistent volume.
+
+🎤 Interview Answer (Final)
+
+“In a database like MySQL, each pod needs its own storage and identity. If a pod restarts, it should retain its data. That’s why we use StatefulSet instead of Deployment.”

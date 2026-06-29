@@ -1,0 +1,18 @@
+2. NodePort
+🔹 What is it?
+
+Exposes service on a specific port of each node
+
+🔹 Why?
+
+To access application from outside cluster (basic way)
+
+🔹 Where used?
+
+Testing / development
+
+🔹 How it works?
+<NodeIP>:Port
+🎤 Interview Answer
+
+“NodePort exposes the application on a port of each node, allowing external access using node IP and port.”

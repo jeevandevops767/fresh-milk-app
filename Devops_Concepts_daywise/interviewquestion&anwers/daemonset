@@ -1,0 +1,20 @@
+DAEMONSET (Using Your Framework)
+🔹 What is it?
+
+DaemonSet ensures a pod runs on every node in the cluster.
+
+🔹 Why we use it?
+
+Because some services need to run on all nodes for monitoring or logging.
+
+🔹 Where it is used?
+
+Logging agents (Fluentd), monitoring agents, security tools.
+
+🔹 How it works?
+
+Kubernetes automatically deploys one pod per node and adds it when new nodes join.
+
+🎤 Interview Answer
+
+“For logging or monitoring, we need an agent on every node. So we use DaemonSet to ensure one pod runs on each node automatically.”

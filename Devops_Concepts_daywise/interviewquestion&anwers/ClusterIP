@@ -1,0 +1,20 @@
+🚀 1. ClusterIP
+🔹 What is it?
+
+Default service type — exposes service internally within the cluster.
+
+🔹 Why?
+
+For internal communication between services
+
+🔹 Where used?
+
+Backend → Database communication
+
+🔹 How it works?
+
+Assigns internal IP accessible only inside cluster
+
+🎤 Interview Answer
+
+“ClusterIP is used for internal communication between services within the cluster.”

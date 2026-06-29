@@ -1,0 +1,80 @@
+KUBERNETES INGRESS
+🔹 1. What is it?
+
+Ingress is a Kubernetes resource used to manage external HTTP and HTTPS access to services.
+
+🔹 2. Why we use it?
+
+Because instead of creating multiple LoadBalancers for each service, we can use a single entry point to route traffic to multiple services.
+
+🔹 3. Where it is used?
+Multiple applications behind one domain
+Routing traffic based on path or host
+
+👉 Example:
+
+/app1 → service1
+/app2 → service2
+🔹 4. How it works?
+
+Ingress uses rules (host/path) and an Ingress Controller to route incoming traffic to the correct service.
+
+⚠️ VERY IMPORTANT POINT
+
+👉 Ingress itself doesn’t work alone
+👉 It needs an Ingress Controller (like NGINX)
+
+🎤 Interview Answer (Base)
+
+“Ingress is used to manage external HTTP and HTTPS traffic and route it to different services based on rules like path or host.”
+
+🔥 STRONG INTERVIEW VERSION
+
+“Ingress is used to expose multiple services using a single entry point by routing HTTP or HTTPS traffic based on path or host rules. It works with an Ingress Controller, which handles the actual traffic routing.”
+
+🧠 SIMPLE FLOW (VERY IMPORTANT)
+User → Ingress → Service → Pods
+🔥 REAL-TIME EXPLANATION (Use This)
+
+“Instead of creating multiple LoadBalancers, we use Ingress to route traffic to different services using a single external IP.”
+
+🚨 SCENARIO QUESTIONS
+🔥 Scenario 1
+
+👉 Multiple apps, one domain
+
+Answer:
+
+“We use Ingress to route traffic based on paths or subdomains.”
+
+🔥 Scenario 2
+
+👉 Too many LoadBalancers
+
+Answer:
+
+“We replace multiple LoadBalancers with a single Ingress for cost and management efficiency.”
+
+🎯 Your Task Now
+
+👉 Practice OUT LOUD:
+
+What is Ingress
+Why we use it
+How it works
+
+👉 Then answer:
+
+👉 “Difference between LoadBalancer and Ingress?”
+
+🚀 Quick Help (for that question)
+
+👉 You can say:
+
+“LoadBalancer exposes a single service externally, whereas Ingress provides routing rules to expose multiple services using a single entry point.”
+
+🎯 FINAL STEP
+
+Say:
+
+👉 “Day 5 completed”
